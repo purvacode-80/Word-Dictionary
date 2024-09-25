@@ -4,8 +4,12 @@ from PyDictionary import PyDictionary
 app = Flask(__name__)
 dictionary = PyDictionary()
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/') 
+def index() :
+    return render_template('index.html')
+
+@app.route('/', methods=['POST'])
+def solution():
     meaning = None
     synonyms = None
     antonyms = None
