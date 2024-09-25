@@ -8,7 +8,7 @@ dictionary = PyDictionary()
 def index() :
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
+@app.route('/solution', methods=['POST'])
 def solution():
     meaning = None
     synonyms = None
