@@ -3,42 +3,31 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: black;
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center;*/
+    align-items: center;
     height: 100vh;
 }
 
 .container {
-    padding-top: 100px;
-    display: grid;
-    place-items: center;
-}
-
-.content {
     background: #fff;
     padding: 20px;
-    margin-top: 5px;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(82, 70, 246, 0.925);
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Change from 300px to a percentage */
+    max-width: 400px; /* Set a maximum width for larger screens */
     text-align: center;
 }
 
 h1 {
-    font-family: "Playwrite DE Grund", cursive;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
     margin-bottom: 20px;
-    color: rgba(90, 43, 246, 0.888);
 }
 
 input[type="text"] {
-    width: 80%;
+    width: 100%; /* Use full width on mobile */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -65,6 +54,22 @@ h2, h3 {
 .error {
     color: red;
     margin-top: 10px;
+}
+
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .container {
+        width: 100%; /* Ensure container takes full width on small devices */
+        max-width: none; /* Remove max-width restriction */
+    }
+
+    button {
+        width: 100%; /* Buttons will also take full width on small screens */
+    }
 }
 
 .navbar {
