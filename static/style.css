@@ -56,41 +56,20 @@ h2, h3 {
     margin-top: 10px;
 }
 
-/* Media Queries for smaller screens */
-@media only screen and (max-width: 600px) {
-    body {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .container {
-        width: 100%; /* Ensure container takes full width on small devices */
-        max-width: none; /* Remove max-width restriction */
-    }
-
-    button {
-        width: 100%; /* Buttons will also take full width on small screens */
-    }
-}
-
+/* Responsive design for side menu */
 .navbar {
-    /* visibility: hidden; */
-    /* display: none; */
-    /* display: none; */
-    justify-content : space-between;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
     position: fixed;
-    /* visibility: hidden; */
-    /* width: 0px;
-    height: 0px; */
     top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
 }
 
 .logo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top : 50px;
     margin: 20px;
 }
 
@@ -100,10 +79,6 @@ h2, h3 {
     border-radius: 25%;
     cursor: pointer;
 }
-
-/* .main-nav {
-    margin-top: 20px;
-} */
 
 #side-menu {
     position: fixed;
@@ -118,30 +93,24 @@ h2, h3 {
     z-index: 999;
 }
 
-ol li {
-    list-style-type: none;
-}
-
 .menu li {
     margin: 20px;
 }
 
 .menu .title {
-        background-color: cornsilk;
-        border-radius: 25%;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-        font-family: "Montserrat", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 25px;
-        padding: 10px 20px;
-        display: block;
+    background-color: cornsilk;
+    border-radius: 25%;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 10px 20px;
+    display: block;
 }
 
-/* Make dropdowns position themselves normally and take up space */
+/* Dropdown styling */
 .submenu .dropdown {
     display: none;
     position: relative;
@@ -150,43 +119,52 @@ ol li {
     margin-top: 10px;
 }
 
-/* When hovering over or clicking, show the dropdown */
-.submenu:hover .dropdown,
-.submenu .dropdown-active {
+/* Show dropdown on hover */
+.submenu:hover .dropdown {
     display: block;
 }
 
-/* Adjust submenu shifting */
-.submenu {
-    position: relative;
-}
-
-.dropdown a:hover .dropdown{
-    text-decoration: underline;
-}
-
-/* Submenu links */
 .submenu .dropdown a {
-    /* padding: 10px; */
     color: cornsilk;
     font-family: Verdana;
-    font-weight: 100;
     font-size: 18px;
-    display: block;
-}
-
-/* Show submenu on hover */
-.submenu:hover .dropdown {
     display: block;
 }
 
 /* Responsive design for mobile devices */
 @media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+    }
+
     #side-menu {
         width: 200px;
     }
 
     .menu a {
         font-size: 18px;
+    }
+
+    #logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Adjust container on smaller screens */
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Mobile adjustments for the menu */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin: 10px 20px;
     }
 }
