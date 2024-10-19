@@ -67,23 +67,26 @@ h2, h3 {
     margin-top: 10px;
 }
 
-
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    /* visibility: hidden; */
+    /* display: none; */
+    /* display: none; */
+    justify-content : space-between;
     align-items: center;
-    padding: 10px 20px;
-    /* background-color: floralwhite; */
-    color: black;
+    padding: 0px;
     position: fixed;
+    /* visibility: hidden; */
+    /* width: 0px;
+    height: 0px; */
     top: 0;
 }
 
 .logo {
-    display: flex;
-    justify-content: flex-start;
     position: fixed;
-    margin: 30px;
+    top: 0;
+    left: 0;
+    margin-top : 50px;
+    margin: 20px;
 }
 
 #logo-img {
@@ -93,9 +96,9 @@ h2, h3 {
     cursor: pointer;
 }
 
-.main-nav {
+/* .main-nav {
     margin-top: 20px;
-}
+} */
 
 #side-menu {
     position: fixed;
@@ -133,26 +136,25 @@ ol li {
         display: block;
 }
 
+/* Make dropdowns position themselves normally and take up space */
 .submenu .dropdown {
     display: none;
+    position: relative;
+    background-color: rgb(65, 65, 65);
+    padding: 10px;
+    margin-top: 10px;
 }
 
-/* Submenu items */
-.submenu .dropdown li {
-        list-style-type: none;
-        position: relative;
-        width: 150;
-    }
-    
-    /* Add a custom bullet */
-.submenu .dropdown li::before {
-        content: "\2022";       /* Unicode for bullet */
-        color: cornsilk;            /* Bullet color */
-        font-size: 20px;        /* Adjust size if necessary */
-        position: absolute;
-        left: -20px;            /* Position bullet */
-        top: 0;
-    }
+/* When hovering over or clicking, show the dropdown */
+.submenu:hover .dropdown,
+.submenu .dropdown-active {
+    display: block;
+}
+
+/* Adjust submenu shifting */
+.submenu {
+    position: relative;
+}
 
 .dropdown a:hover .dropdown{
     text-decoration: underline;
@@ -172,7 +174,6 @@ ol li {
 .submenu:hover .dropdown {
     display: block;
 }
-
 
 /* Responsive design for mobile devices */
 @media screen and (max-width: 768px) {
