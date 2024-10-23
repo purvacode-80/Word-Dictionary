@@ -63,21 +63,44 @@ h2, h3 {
     color: red;
     margin-top: 10px;
 }
+    .content {
+        width: 90%; /* Full width on smaller screens */
+        max-width: 400px; /* Limit max width */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+
+    input[type="text"] {
+        width: 90%; /* Full width input on mobile */
+    }
+
+    button {
+        width: 100%; /* Full width button on mobile */
+        padding: 12px;
+    }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    /* visibility: hidden; */
+    /* display: none; */
+    /* display: none; */
+    justify-content : space-between;
     align-items: center;
-    padding: 10px 20px;
-    color: black;
+    padding: 0px;
     position: fixed;
+    /* visibility: hidden; */
+    /* width: 0px;
+    height: 0px; */
     top: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 .logo {
-    margin: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top : 50px;
+    margin: 20px;
 }
 
 #logo-img {
@@ -87,13 +110,13 @@ h2, h3 {
     cursor: pointer;
 }
 
-.main-nav {
+/* .main-nav {
     margin-top: 20px;
-}
+} */
 
 #side-menu {
     position: fixed;
-    left: -300px;
+    left: -300px; /* Initially hidden off-screen */
     top: 0;
     padding: 10px;
     width: 250px;
@@ -113,42 +136,47 @@ ol li {
 }
 
 .menu .title {
-    background-color: cornsilk;
-    border-radius: 25%;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 25px;
-    padding: 10px 20px;
+        background-color: cornsilk;
+        border-radius: 25%;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 25px;
+        padding: 10px 20px;
+        display: block;
+}
+
+/* Make dropdowns position themselves normally and take up space */
+.submenu .dropdown {
+    display: none;
+    position: relative;
+    background-color: rgb(65, 65, 65);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* When hovering over or clicking, show the dropdown */
+.submenu:hover .dropdown,
+.submenu .dropdown-active {
     display: block;
 }
 
-.submenu .dropdown {
-    display: none;
-}
-
-.submenu .dropdown li {
-    list-style-type: none;
+/* Adjust submenu shifting */
+.submenu {
     position: relative;
-    width: 150px;
 }
 
-.submenu .dropdown li::before {
-    content: "\2022";
-    color: cornsilk;
-    font-size: 20px;
-    position: absolute;
-    left: -20px;
-    top: 0;
-}
-
-.dropdown a:hover .dropdown {
+.dropdown a:hover .dropdown{
     text-decoration: underline;
 }
 
+/* Submenu links */
 .submenu .dropdown a {
+    /* padding: 10px; */
     color: cornsilk;
     font-family: Verdana;
     font-weight: 100;
@@ -156,6 +184,7 @@ ol li {
     display: block;
 }
 
+/* Show submenu on hover */
 .submenu:hover .dropdown {
     display: block;
 }
@@ -168,37 +197,5 @@ ol li {
 
     .menu a {
         font-size: 18px;
-    }
-
-    .content {
-        width: 90%; /* Full width on smaller screens */
-        max-width: 400px; /* Limit max width */
-    }
-
-    h1 {
-        font-size: 24px; /* Smaller heading for mobile */
-    }
-
-    input[type="text"] {
-        width: 90%; /* Full width input on mobile */
-    }
-
-    button {
-        width: 100%; /* Full width button on mobile */
-        padding: 12px;
-    }
-
-    .navbar {
-        flex-direction: column; /* Stack navbar items on mobile */
-        align-items: flex-start;
-    }
-
-    .logo {
-        margin: 10px 20px;
-    }
-
-    #logo-img {
-        width: 50px;
-        height: 50px;
     }
 }
